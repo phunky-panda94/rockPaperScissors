@@ -6,17 +6,30 @@ function playRound(player, computer) {
     }
 
     // win
-    if (player === rock && computer === scissors) {
-        
-    }
     // rock - scissors
-    // paper - rock
-    // scissors - paper
+    if ((player === 'rock' && computer === 'scissors') ||
+        // paper - rock 
+        (player === 'paper' && computer === 'rock') || 
+        // scissors - paper
+        (player === 'scissors' && computer === 'paper')) {
 
+            player = player[0].toUpperCase() + player.slice(1,player.length);
+            return player + ' beats ' + computer + '! You win!';
+
+    };
+    
     // lose
     // rock - paper -> lose
+    if ((player === 'rock' && computer === 'paper' ) ||
     // paper - scissors -> lose
+        (player === 'paper' && computer === 'scissors') ||
     // scissors - rock -> lose
+        (player === 'scissors' && computer === 'rock')) {
+
+            computer = computer[0].toUpperCase() + computer.slice(1,computer.length);
+            return computer + ' beats ' + player + '! You lose!';
+
+    };
 
 }
 

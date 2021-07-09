@@ -33,4 +33,26 @@ function playRound(player, computer) {
 
 }
 
-module.exports = playRound;
+function playGame() {
+
+    if (player == null) {
+        alert("Pick an option first");
+        return;
+    }
+
+    let options = ['rock', 'paper', 'scissors'];
+    let computer = options[Math.floor(Math.random() * (options.length))];
+
+    const result = document.getElementById('result');
+    result.innerText = playRound(player, computer); 
+
+}
+
+let player = document.getElementById('player');
+
+player.addEventListener('submit', () => {
+    alert(player.value);
+    //playGame(event.target.value);
+});
+
+//module.exports = playRound;

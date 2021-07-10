@@ -48,11 +48,11 @@ function playGame() {
 
 }
 
-let player = document.getElementById('player');
+// let player = document.getElementById('player');
 
-player.addEventListener('submit', () => {
-    alert(player.value);
-    //playGame(event.target.value);
-});
+// player.addEventListener('submit', () => {
+//     alert(player.value);
+//     //playGame(event.target.value);
+// });
 
-//module.exports = playRound;
+module.exports = playRound;

@@ -35,24 +35,25 @@ function playRound(player, computer) {
 
 function playGame() {
 
-    if (player == null) {
+    const playerChoice = new FormData(form).get('player');
+
+    if (playerChoice == null) {
         alert("Pick an option first");
         return;
     }
 
     let options = ['rock', 'paper', 'scissors'];
-    let computer = options[Math.floor(Math.random() * (options.length))];
+    let computerChoice = options[Math.floor(Math.random() * (options.length))];
 
-    const result = document.getElementById('result');
-    result.innerText = playRound(player, computer); 
+    player.textContent = "You: " + playerChoice;
+    computer.textContent = 'Computer: ' + computerChoice;
+    result.textContent = playRound(playerChoice, computerChoice); 
+    event.preventDefault();
 
 }
 
-// let player = document.getElementById('player');
+const form = document.querySelector('form')
 
-// player.addEventListener('submit', () => {
-//     alert(player.value);
-//     //playGame(event.target.value);
-// });
+form.addEventListener('submit', playGame);
 
-module.exports = playRound;
+//module.exports = playRound;
